@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hq1jafr12-python-gitops
+  description: This is GitOps manifest for hq1jafr12-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hq1jafr12-python
+    backstage.io/kubernetes-id: hq1jafr12-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hq1jafr12-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hq1jafr12-python
